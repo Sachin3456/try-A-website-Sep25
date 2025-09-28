@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-body {
-  width: 60%;
-  margin: 10px 16px 16px 270px;
-  font-family: 'Segoe UI', Calibri, Arial, sans-serif;
-  font-size: 21px;
-  background-color: rgb(245, 245, 245);
-}
-pre {
-	font-family: 'Segoe UI', Calibri, Arial, sans-serif;
-  font-size: 22px;
-}
-</style>	
-	<title>What's in this Acer Aspire Window</title>
+  <style>
+    .accordion {
+      cursor: pointer;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      outline: none;
+      transition: background 0.2s ease;
+      background-color: #eee;
+      margin-bottom: 5px;
+    }
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+    .panel {
+      padding: 10px;
+      display: none;
+      background-color: #f1f1f1;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
-<pre>
-23Sep25  --  10:53 am  -- Created this File.
+<h2>Simple Accordion Example</h2>
 
-This Window is All About Acer Aspire i5 1334U
+<button class="accordion">Section 1</button>
+<div class="panel">
+  <p>Section 1 Content...</p>
+</div>
 
-Its Official Acer Page is in this Window.
+<button class="accordion">Section 2</button>
+<div class="panel">
+  <p>Section 2 Content...</p>
+</div>
 
-Amazon Page with 39,000 Price @50% Discount, The Page also Mentions
-that Max Upgrade is 32 gb at 1 Place  &  64 gb at Another Place
-Confirming at least 32 gb Max is Possible.
+<button class="accordion">Section 3</button>
+<div class="panel">
+  <p>Section 3 Content...</p>
+</div>
 
-But the Amazon Page does not mentions about MS Office version.
-Most Likely, its 2021
-So, I am trying for 2024 LTSC Install in VirtualBox
+<script>
+  const acc = document.getElementsByClassName("accordion");
+  for (let i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      panel.style.display = (panel.style.display === "block") ? "none" : "block";
+    }
+  }
+</script>
 
- 
-
-</pre>	
-	
 </body>
 </html>
